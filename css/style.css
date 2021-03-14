@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+body {
+    background-color: #ecf1f2;
+    margin: 0px;
+    padding: 0px;
+}
+
+body, input, textarea {
+    font-family: Verdana, Helvetica, Arial, Sans-Serif;
+    font-size: 12px;
+    color: #2d4652;
+}
+
+.general_form {
+    display: block;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.general_form_button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 15px;
+}
+
+.general_form textarea {
+    width: 100%;
+}
+
+.general_table {
+    width: auto;
+    margin: 20px auto 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background: white;
+}
+
+.general_table td {
+    padding: 10px;
+    border: black 1px solid;
+}

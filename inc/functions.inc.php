@@ -169,8 +169,10 @@ function seperateData ($textareaString)
         if (count($totalDataAsSingleArr[$i])>0) {
             
             $telephoneNumber = implode(" ", $totalDataAsSingleArr[$i]);
+            $telephoneNumberWithoutAllowedSigns = str_replace(["(", ")", "+", "-", " "], "", $telephoneNumber);
 
-        if (!preg_match('/[^0-9]+()\+\-/', $telephoneNumber)) {
+
+        if (ctype_digit($telephoneNumberWithoutAllowedSigns)) {
             $resultArr[$i]["telephone"] = $telephoneNumber;
         } else {
             $resultArr[$i]["telephone"] = "incorrect number";
@@ -198,14 +200,6 @@ function seperateData ($textareaString)
         $uniqueArray[$i] = $resultArr[$compareNameArrKeys[$i]];
     }
 
-
-    // echo "line 120  ".var_dump($totalDataAsSingleArr).'<br><br>';
-    // echo "line 121  ".var_dump($resultArr).'<br><br>';
-    // echo var_dump($resultArr).'<br><br>';
-
-    // echo var_dump($compareNameArr).'<br><br>';
-    // echo var_dump($compareNameArrKeys).'<br><br>';
-    // echo var_dump($uniqueArray).'<br><br>';
     return $uniqueArray;
 }
 

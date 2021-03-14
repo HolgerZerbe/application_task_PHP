@@ -29,20 +29,9 @@ if ($_POST) {
           </form>
 
           <hr>
+                <?php {isset($tableData) ? require 'inc/table.tpl.php': null; } ?>
 
-          <table class= "general_table">
-              <thead>
-                <tr>
-                    <td>Salutation</td><td>First name</td><td>Last name</td><td>Telephone</td><td>Email</td>
-                </tr>
-              </thead>
-              <tbody>
 
-              <?php foreach ($tableData as $data): ?>
-                <?php require 'inc/table.tpl.php'; ?>
-            <?php endforeach; ?>
-              </tbody>
-          </table>
 
 </body>
 
